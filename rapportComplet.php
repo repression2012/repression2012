@@ -1,45 +1,48 @@
 <?php
 
+require_once("elements.php");
+
 $notes = array(
 	'notes' => array(),
 	'offset' => 0
 );
 
-$titleSection = array(
-	section(
+
+$header = array(
+	title(
 		array(
-			title(
-				array(
-					strong("Répression, Discrimination et Grève Étudiante:"),
-					br(),
-					"Analyse et témoignages"
-				)
-			),
-			paragraph(
-				array(
-					"Avril 2013 - ",
-					strong("Rapport"),
-					br(),
-					"de la Ligue des droits et libertés,",
-					br(),
-					"de l’Association des juristes progressistes",
-					br(),
-					"et de l’Association pour une solidarité syndicale étudiante"
-				),
-				'rightAligned'
-			),
-			image(
-				"images/fromPDF/couverture.jpeg",
-				"Couverture du rapport: une manifestante à côté d'une rangée de policiers",
-				'underlay',
-				"Photo de couverture © Mario Jean / MADOC 2012"
-			)
+			strong("Répression, Discrimination et Grève Étudiante:"),
+			br(),
+			"Analyse et témoignages"
 		)
+	),
+	paragraph(
+		array(
+			"Avril 2013 - ",
+			strong("Rapport"),
+			br(),
+			"de la Ligue des droits et libertés,",
+			br(),
+			"de l’Association des juristes progressistes",
+			br(),
+			"et de l’Association pour une solidarité syndicale étudiante"
+		),
+		'rightAligned'
 	)
 );
 
-$leRapport = array(
+$coverImage = array(
+	image(
+		"images/fromPDF/couverture.jpeg",
+		"Couverture du rapport: une manifestante à côté d'une rangée de policiers",
+		'underlay',
+		"Photo de couverture © Mario Jean / MADOC 2012"
+	)
+);
+
+$introSection =	array(
 	section(
+		$toc,
 		array(
 			sectionTitle($toc,"Introduction"),
 			blockquote(
@@ -332,8 +335,12 @@ $leRapport = array(
 			paragraph("Nous présentons ensuite les témoignages portant sur les représailles et la discrimination subies pour avoir porté le carré rouge, la question de la loi spéciale et la saga des injonctions. Un des derniers chapitres offre un portrait des émotions, perceptions et interprétations des personnes ayant vécu ces événements. La conclusion fait un survol des violations de droits et le rapport se termine par une série de recommandations."),
 			notes($notes)
 		)
-	),
+	)
+);
+
+$brutalitePoliciere = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/brutalitePoliciere.jpeg",
@@ -701,8 +708,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$arrestations = array(
 	section(
+		$toc,
 		array(
 			sectionTitle($toc,"Les arrestations"),
 			paragraph("De nombreux témoignages font état d’arrestations illégales, non fondées, abusives et souvent brutales. La majorité d’entre elles ont eu lieu dans le cadre de manifestations et d’actions de perturbation (avant, pendant ou après celles-ci), mais plusieurs sont survenues à l’occasion d’activités quotidiennes ordinaires, sur la rue, à la sortie des bars, dans le métro ou ailleurs. Selon notre bilan, le nombre d’arrestations effectuées entre le 16 février et le 3 septembre 2012 s’élève à 3 509. Nous analyserons d’abord les arrestations individuelles, puis celles de masse."),
@@ -943,8 +953,12 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+
+$chefsAccusation = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/chefsAccusation.jpeg",
@@ -1544,8 +1558,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$interpellations = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/interpellations.jpeg",
@@ -1865,8 +1882,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$carreRouge = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/carrerouge.jpeg",
@@ -1909,8 +1929,12 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+
+$loi12 = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/loiSpeciale.jpeg",
@@ -2259,8 +2283,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$injonctions = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/injonctions.jpeg",
@@ -2456,8 +2483,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$temoignages = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/temoins.jpeg",
@@ -2720,8 +2750,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$conclusion = array(
 	section(
+		$toc,
 		array(
 			sectionTitle($toc,"Conclusion"),
 			subsectionTitle($toc,"Violations des droits et libertés"),
@@ -2854,8 +2887,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$recommandations = array(
 	section(
+		$toc,
 		array(
 			sectionTitle($toc,"Recommandations"),
 			paragraph("Compte tenu de ce qui précède, les trois organismes font les recommandations suivantes :"),
@@ -2911,8 +2947,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$bilanArrestations = array(
 	section(
+		$toc,
 		array(
 			sectionTitle($toc,"Annexe 1 - Bilan global des arrestations"),
 			chapterTitle($toc, "La méthodologie de recension des arrestations"),
@@ -3367,8 +3406,11 @@ $leRapport = array(
 				)
 			)
 		)
-	),
+	)
+);
+$bilanArrestationsMasse = array(
 	section(
+		$toc,
 		array(
 			sectionTitle($toc,"Annexe 2 - Bilan des arrestations de masse"),
 			paragraph("Total des arrestations de masse&nbsp;: 2913"),
@@ -3481,8 +3523,11 @@ $leRapport = array(
 			),
 			notes($notes)
 		)
-	),
+	)
+);
+$quatriemeCouverture = array(
 	section(
+		$toc,
 		array(
 			image(
 				"images/fromPDF/quatriemeCouverture.jpeg",
@@ -3490,8 +3535,12 @@ $leRapport = array(
 				null,
 				"Photo de couverture © Mario Jean / MADOC 2012"
 			)
-		)
-	),
+		),
+		null,
+		false
+	)
+);
+$credits = array(
 	logoList(
 		array(
 			listItem(

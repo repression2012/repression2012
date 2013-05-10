@@ -1,11 +1,31 @@
 <?php
 
 $toc = array(
-
+	'inline' => array(),
+	'standalone' => array(),
+	'pages' => array(
+		'intro',
+		'brutalitepoliciere',
+		'arrestations',
+		'chefsaccusation',
+		'interpellations',
+		'carrerouge',
+		'loi12',
+		'injonctions',
+		'temoignages',
+		'conclusion',
+		'recommendations',
+		'bilanarrestations',
+		'bilanarrestationsmasse'
+	),
+	'currentPage' => 0
 );
 
 function implodeIfArray ($contents, $glue = "") {
-	return (is_array($contents)) ? implode($glue, $contents) : $contents;
+	$returnValue = (is_array($contents)) ? implode($glue, $contents) : $contents;
+	$returnValue .= "\n";
+	
+	return $returnValue;
 }
 
 function preRelease ($title, $preReleaseMessage) {
@@ -19,8 +39,31 @@ function preRelease ($title, $preReleaseMessage) {
 	);
 }
 
-function section ($contents) {
-	return "<div class='section'>" . implodeIfArray($contents) . "</div>";
+function meta ($attributes) {
+	$metaTag = "<meta";
+	foreach ($attributes as $name => $value) {
+		$metaTag .= " " . $name . "=\"" . $value . "\"";
+	}
+	$metaTag .= " />";
+	
+	return $metaTag;
+}
+
+function section (&$toc, $contents, $additionnalClasses = null, $isPage = true) {
+	$classes = array('section');
+	if ($additionnalClasses !== null) {
+		if (is_array($additionnalClasses)) {
+			$classes = array_merge($classes, $additionnalClasses);
+		} else {
+			$classes[] = $additionnalClasses;
+		}
+	}
+	
+	if ($isPage) {
+		$toc['currentPage'] += 1;
+	}
+	
+	return "<div class='" . implode(" ", $classes) . "'>" . implodeIfArray($contents) . "</div>";
 }
 
 function classAttribute ($classes) {
@@ -53,26 +96,32 @@ function em ($contents) {
 	return "<em>" . implodeIfArray($contents) . "</em>";
 }
 
-function addToTOC (&$toc, $contents, $class) {
-	$toc[] = array(
+function addToTOC (&$toc, $contents, $class, $page) {
+	
+	$toc['inline'][] = array(
 		'contents' => implodeIfArray($contents),
 		'class' => $class
+	);
+	$toc['standalone'][] = array(
+		'contents' => implodeIfArray($contents),
+		'class' => $class,
+		'page' => $page
 	);
 }
 
 function sectionTitle (&$toc, $contents) {
-	addToTOC($toc, $contents, 'sectionAnchor');
-	return "<h2 id='" . (count($toc) - 1) . "'>" . implodeIfArray($contents) . "</h2>";
+	addToTOC($toc, $contents, 'sectionAnchor', $toc['pages'][$toc['currentPage']]);
+	return "<h2 id='" . (count($toc['inline']) - 1) . "'>" . implodeIfArray($contents) . "</h2>";
 }
 
 function subSectionTitle (&$toc, $contents) {
-	addToTOC($toc, $contents, 'subSectionAnchor');
-	return "<h3 id='" . (count($toc) - 1) . "'>" . implodeIfArray($contents) . "</h3>";
+	addToTOC($toc, $contents, 'subSectionAnchor', $toc['pages'][$toc['currentPage']]);
+	return "<h3 id='" . (count($toc['inline']) - 1) . "'>" . implodeIfArray($contents) . "</h3>";
 }
 
 function chapterTitle (&$toc, $contents) {
-	addToTOC($toc, $contents, 'chapterAnchor');
-	return "<h4 id='" . (count($toc) - 1) . "'>" . implodeIfArray($contents) . "</h4>";
+	addToTOC($toc, $contents, 'chapterAnchor', $toc['pages'][$toc['currentPage']]);
+	return "<h4 id='" . (count($toc['inline']) - 1) . "'>" . implodeIfArray($contents) . "</h4>";
 }
 
 function blockquote ($contents) {
@@ -102,7 +151,9 @@ function numberList ($items) {
 }
 
 function listItem ($contents) {
-	return "<li>" . implodeIfArray($contents) . "</li>";
+	return "<li>
+				" . implodeIfArray($contents) . "
+			</li>";
 }
 
 function acronym ($shortForm, $longForm) {
@@ -163,17 +214,34 @@ function span ($contents) {
 	return "<span>" . implodeIfArray($contents) . "</span>";
 }
 
-function toc ($toc) {
+function toc ($toc, $version) {
 	$tocString = "<h2>Table des Matières</h2><ul class='toc'>";
-	foreach ($toc as $i => $item) {
-		$tocString .= "<li class='" . $item['class'] . "'><a href='#" . $i . "'>" . implodeIfArray($item['contents']) . "</a></li>";
+	$page = "";
+	foreach ($toc[$version] as $i => $item) {
+		if ($version === 'standalone') {
+			$page = $item['page'] . ".php";
+		}
+		$tocString .= "<li class='" . $item['class'] . "'><a href='" . $page . "#" . $i . "'>" . implodeIfArray($item['contents']) . "</a></li>";
 	}
 	$tocString .= "</ul>";
-	return array(section($tocString));
+	return array(
+		section(
+			$toc,
+			$tocString,
+			null,
+			false
+		)
+	);
 }
 
-function shareLinks ($items) {
-	return array("<ul class='shareLinks'>" . implodeIfArray($items) . "</ul>");
+function shareTools ($items) {
+	return "<ul class='shareTools'>
+			" . implodeIfArray($items, "\n\t\t\t") . "
+		</ul>";
+}
+
+function navButton ($url, $text, $title) {
+	return "<a href='" . $url . "' title='" . $title . "'>" . $text . "</a>";
 }
 
 ?>

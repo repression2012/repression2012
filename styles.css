@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	background: #ccc;
 	font-size: 12pt;
+	font-family: sans-serif;
 }
 
 div.section {
@@ -149,22 +150,30 @@ ul.toc {
 	list-style: none;
 }
 
+.toc .renvoi {
+	display: none;
+}
+
 .sectionAnchor, .subSectionAnchor, .chapterAnchor {
 	padding: 0;
 }
 
 .sectionAnchor a, .subSectionAnchor a, .chapterAnchor a {
 	color: #000;
+	font-weight: bold;
 }
 
 .sectionAnchor a:hover, .subSectionAnchor a:hover, .chapterAnchor a:hover {
-	text-decoration: underline;
-	color: #666;
+	color: #4681d6;
 }
 
 .sectionAnchor {
 	font-size: 20pt;
-	margin: 0;
+	margin-top: 2em;
+}
+
+.subSectionAnchor {
+	margin-top: .5em;
 }
 
 .subSectionAnchor a {
@@ -193,14 +202,32 @@ ul.toc {
 	text-decoration: underline;	
 }
 
-.shareLinks {
+.shareTools {
 	width: 64px;
 	position: fixed;
 	top: 10em;
 	left: 0;
+	list-style: none;
 }
 
-.shareLinks img {
+.shareTools img {
 	width:	64px;
 	border: 1px solid #ccc;
+}
+
+.nav {
+	text-align: center;
+}
+
+.nav a, .nav a:visited {
+	font-size: 2em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+	padding: .5em 3em;
+}
+
+.nav a:hover, .nav a:active {
+	color: #4681d6;
+	background: #f8f8f8;
 }
