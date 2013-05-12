@@ -24,13 +24,17 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"violation de la paix",
+	"code criminel",
+	"arrestation",
+	"détention",
+	"fouilles"
 );
 
 $pathInfo = pathinfo(__FILE__);
 $og_url = "http://repression2012.zxq.net/" . $pathInfo['basename'];
 
-//$og_image = "";
+$og_image = "http://repression2012.zxq.net/images/fromPDF/interpellations.jpeg";
 
 include("template.php");
 

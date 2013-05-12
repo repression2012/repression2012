@@ -24,13 +24,14 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"arrestations de masse",
+	"bilan"
 );
 
 $pathInfo = pathinfo(__FILE__);
 $og_url = "http://repression2012.zxq.net/" . $pathInfo['basename'];
 
-//$og_image = "";
+$og_image = "http://repression2012.zxq.net/images/fromPDF/mur.jpeg";
 
 include("template.php");
 

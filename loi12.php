@@ -23,7 +23,11 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"manifestation",
+	"association",
+	"amendes",
+	"itinéraire",
+	"loi spéciale"
 );
 
 $pathInfo = pathinfo(__FILE__);

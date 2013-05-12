@@ -5,6 +5,12 @@ require_once("rapportComplet.php");
 $thisPage = 'index';
 require_once("nav.php");
 
+$title = "404 - Page introuvable"
+
+$description = "";
+
+$keywords = array();
+
 $titleSection = array(
 	section(
 		$toc,
@@ -35,7 +41,7 @@ $content = array_merge(
 );
 
 $pathInfo = pathinfo(__FILE__);
-$og_url = "http://repression2012.zxq.net/sections/" . $pathInfo['basename'];
+$og_url = "http://repression2012.zxq.net/" . $pathInfo['basename'];
 
 //$og_image = "";
 

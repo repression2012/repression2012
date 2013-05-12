@@ -24,7 +24,13 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"témoignages",
+	"droits",
+	"rapport",
+	"arrestations",
+	"répression",
+	"grève",
+	"manifestations"	
 );
 
 $pathInfo = pathinfo(__FILE__);

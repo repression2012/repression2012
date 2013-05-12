@@ -24,13 +24,18 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"témoignages",
+	"arrestation",
+	"victime",
+	"plainte",
+	"brutalité",
+	"interventions"
 );
 
 $pathInfo = pathinfo(__FILE__);
 $og_url = "http://repression2012.zxq.net/" . $pathInfo['basename'];
 
-//$og_image = "";
+$og_image = "http://repression2012.zxq.net/images/fromPDF/temoins.jpeg";
 
 include("template.php");
 

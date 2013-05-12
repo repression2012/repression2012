@@ -24,13 +24,16 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"carré rouge",
+	"sybole politique",
+	"discrimination",
+	"convictions politique"
 );
 
 $pathInfo = pathinfo(__FILE__);
 $og_url = "http://repression2012.zxq.net/" . $pathInfo['basename'];
 
-//$og_image = "";
+$og_image = "http://repression2012.zxq.net/images/fromPDF/carrerouge.jpeg";
 
 include("template.php");
 

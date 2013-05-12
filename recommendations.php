@@ -24,7 +24,8 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"droits",
+	"recommandations"
 );
 
 $pathInfo = pathinfo(__FILE__);

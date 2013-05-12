@@ -24,7 +24,10 @@ $content = array_merge(
 $description = "";
 
 $keywords = array(
-	
+	"arrestations",
+	"bilan",
+	"accusation",
+	"infraction"
 );
 
 $pathInfo = pathinfo(__FILE__);

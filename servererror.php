@@ -5,6 +5,12 @@ require_once("rapportComplet.php");
 $thisPage = 'index';
 require_once("nav.php");
 
+$title = "500 - Erreur interne du serveur"
+
+$description = "";
+
+$keywords = array();
+
 $titleSection = array(
 	section(
 		$toc,
@@ -20,7 +26,7 @@ $content = array_merge(
 		section(
 			$toc,
 			array(
-				sectionTitle($toc, "Erreur interne"),
+				sectionTitle($toc, "Erreur interne du serveur"),
 				paragraph(
 					array(
 						"Le serveur a rencontré un problème. ",
@@ -35,7 +41,7 @@ $content = array_merge(
 );
 
 $pathInfo = pathinfo(__FILE__);
-$og_url = "http://repression2012.zxq.net/sections/" . $pathInfo['basename'];
+$og_url = "http://repression2012.zxq.net/" . $pathInfo['basename'];
 
 //$og_image = "";
 
