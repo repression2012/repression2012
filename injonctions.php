@@ -17,7 +17,8 @@ $content = array_merge(
 		)
 	),
 	$nav,
-	$injonctions
+	$injonctions,
+	$nav
 );
 
 $description = "";

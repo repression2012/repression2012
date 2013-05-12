@@ -17,7 +17,8 @@ $content = array_merge(
 		)
 	),
 	$nav,
-	$bilanArrestationsMasse
+	$bilanArrestationsMasse,
+	$nav
 );
 
 $description = "";

@@ -2,6 +2,9 @@
 
 require_once("rapportComplet.php");
 
+$thisPage = 'index';
+require_once("nav.php");
+
 $titleSection = array(
 	section(
 		$toc,
@@ -13,7 +16,9 @@ $titleSection = array(
 
 $content = array_merge(
 	$titleSection,
-	toc($toc, 'standalone')
+	$nav,
+	toc($toc, 'standalone'),
+	$nav
 );
 
 $pathInfo = pathinfo(__FILE__);

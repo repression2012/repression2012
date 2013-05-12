@@ -4,6 +4,7 @@ $toc = array(
 	'inline' => array(),
 	'standalone' => array(),
 	'pages' => array(
+		'index',
 		'intro',
 		'brutalitepoliciere',
 		'arrestations',
@@ -18,7 +19,7 @@ $toc = array(
 		'bilanarrestations',
 		'bilanarrestationsmasse'
 	),
-	'currentPage' => 0
+	'currentPage' => 1
 );
 
 function implodeIfArray ($contents, $glue = "") {
@@ -106,6 +107,28 @@ function addToTOC (&$toc, $contents, $class, $page) {
 		'contents' => implodeIfArray($contents),
 		'class' => $class,
 		'page' => $page
+	);
+}
+
+function toc ($toc, $version) {
+	$skipLink = ($version === 'inline') ? linkAnchor("#0", "Sauter la table des matières", "tocSkip") : "";
+	$tocString = paragraph($skipLink) . "<h2>Table des Matières</h2><ul class='toc'>";
+	$page = "";
+	foreach ($toc[$version] as $id => $item) {
+		if ($version === 'standalone') {
+			$page = $item['page'] . ".php";
+		}
+		$id_string = (($item['class'] === 'sectionAnchor' && $version === 'standalone') ? "" : "#" . $id);
+		$tocString .= "<li class='" . $item['class'] . "'><a href='" . $page . $id_string . "'>" . implodeIfArray($item['contents']) . "</a></li>";
+	}
+	$tocString .= "</ul>";
+	return array(
+		section(
+			$toc,
+			$tocString,
+			null,
+			false
+		)
 	);
 }
 
@@ -214,34 +237,34 @@ function span ($contents) {
 	return "<span>" . implodeIfArray($contents) . "</span>";
 }
 
-function toc ($toc, $version) {
-	$tocString = "<h2>Table des Matières</h2><ul class='toc'>";
-	$page = "";
-	foreach ($toc[$version] as $i => $item) {
-		if ($version === 'standalone') {
-			$page = $item['page'] . ".php";
-		}
-		$tocString .= "<li class='" . $item['class'] . "'><a href='" . $page . "#" . $i . "'>" . implodeIfArray($item['contents']) . "</a></li>";
-	}
-	$tocString .= "</ul>";
-	return array(
-		section(
-			$toc,
-			$tocString,
-			null,
-			false
-		)
-	);
-}
-
 function shareTools ($items) {
 	return "<ul class='shareTools'>
 			" . implodeIfArray($items, "\n\t\t\t") . "
 		</ul>";
 }
 
-function navButton ($url, $text, $title) {
-	return "<a href='" . $url . "' title='" . $title . "'>" . $text . "</a>";
+function navButton ($url, $text, $classes = null) {
+	$classes_string = "";
+	if ($classes !== null) {
+		if (!is_array($classes)) {
+			$classes = array($classes);
+		}
+		
+		$nbClasses = count($classes);
+		for	($i = 0; $i < $nbClasses; $i += 1) {
+			if ($classes[$i] === "nav_toc") {
+				$title = "Retour à la table des matières";
+			} else {
+				if ($i === 0) {
+					$title = "Section précédente";
+				}
+			}
+		}
+		
+		$classes_string = " class='" . implode(" ", $classes) . "'";
+	}
+	
+	return "<a href='" . $url . "' title='" . $title . "'" . $classes_string . ">" . $text . "</a>";
 }
 
 ?>

@@ -16,13 +16,17 @@ if ($nextPageIndex < count($toc['pages'])) {
 	$nextURL = $toc['pages'][$nextPageIndex] . ".php";
 }
 
+$backButton = ($thisPage === 'index') ? "" : navButton($previousURL, "←");
+$upButton = ($thisPage === 'index') ? navButton("repression2012.php", "Rapport&nbsp;Complet") : navButton("index.php", "Table&nbsp;des&nbsp;matières", "nav_toc");
+$nextButton = ($thisPage === 'index') ? "" : navButton($nextURL, "→");
+
 $nav = array(
 	section(
 		$toc,
 		array(
-			navButton($previousURL, "<", "Section précédente"),
-			navButton("index.php", "Table des matières", "Retourner à la table des matières"),
-			navButton($nextURL, ">", "Section suivante")
+			$backButton,
+			$upButton,
+			$nextButton
 		),
 		'nav',
 		false

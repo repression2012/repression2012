@@ -17,7 +17,8 @@ $content = array_merge(
 		)
 	),
 	$nav,
-	$brutalitePoliciere
+	$brutalitePoliciere,
+	$nav
 );
 
 $description = "";

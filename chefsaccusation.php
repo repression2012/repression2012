@@ -17,7 +17,8 @@ $content = array_merge(
 		)
 	),
 	$nav,
-	$chefsAccusation
+	$chefsAccusation,
+	$nav
 );
 
 $description = "";
