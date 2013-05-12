@@ -135,7 +135,8 @@ $shareTools = shareTools(
 
 
 if (!isset($content)) {
-	$content = "Default content";
+	header('Location: repression2012.zxq.net', true, 500);
+	die();
 }
 
 $content_string = implodeIfArray(array_merge($content, $credits));
