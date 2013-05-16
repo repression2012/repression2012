@@ -29,9 +29,13 @@ switch ($thisPage) {
 		$upButton = " | " . navButton('repression2012.pdf', "Version PDF") . " | ";
 		$nextButton = navButton('#0', "Sauter la table des matières ↓");
 		break;
+	case 'notfound':
+	case 'servererror':
+		$upButton = navButton("index.php", "Table&nbsp;des&nbsp;matières");
+		break;
 	default:
 		$backButton = navButton($previousURL, "←");
-		$upButton = navButton("index.php", "Table&nbsp;des&nbsp;matières", "nav_toc");
+		$upButton = navButton("index.php", "Table&nbsp;des&nbsp;matières");
 		$nextButton = navButton($nextURL, "→");
 		break;
 }

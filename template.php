@@ -4,6 +4,10 @@ date_default_timezone_set('America/Montreal');
 
 require_once("elements.php");
 
+if (!isset($noSharing)) {
+	$noSharing = false;
+}
+
 /* Meta */
 
 $lang = "fr";
@@ -143,11 +147,18 @@ $content_string = implodeIfArray(array_merge($content, $credits));
 
 $pageElements = array(
 	$content_string,
-	$googleAnalyticsIntegration,
-	$facebookIntegration,
-	$twitterIntegration,
-	$shareTools
+	$googleAnalyticsIntegration
 );
+if ($noSharing === false) {
+	$pageElements = array_merge(
+		$pageElements,
+		array(
+			$facebookIntegration,
+			$twitterIntegration,
+			$shareTools
+		)
+	);
+}
 
 $pageElements_string = implodeIfArray($pageElements, "\n\t\t");
 
