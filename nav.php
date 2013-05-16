@@ -26,7 +26,7 @@ switch ($thisPage) {
 		break;
 	case 'repression2012':
 		$backButton = navButton("index.php", "←");
-		$upButton = " | ";
+		$upButton = " | " . navButton('repression2012.pdf', "Version PDF") . " | ";
 		$nextButton = navButton('#0', "Sauter la table des matières ↓");
 		break;
 	default:
