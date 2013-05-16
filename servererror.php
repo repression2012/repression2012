@@ -15,7 +15,7 @@ $titleSection = array(
 	section(
 		$toc,
 		array_merge($header),
-		null,
+		'header',
 		false
 	)
 );

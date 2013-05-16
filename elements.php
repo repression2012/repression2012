@@ -111,8 +111,7 @@ function addToTOC (&$toc, $contents, $class, $page) {
 }
 
 function toc ($toc, $version) {
-	$skipLink = ($version === 'inline') ? linkAnchor("#0", "Sauter la table des matières", "tocSkip") : "";
-	$tocString = paragraph($skipLink) . "<h2>Table des Matières</h2><ul class='toc'>";
+	$tocString = "<h2>Table des Matières</h2><ul class='toc'>";
 	$page = "";
 	foreach ($toc[$version] as $id => $item) {
 		if ($version === 'standalone') {
@@ -263,7 +262,7 @@ function navButton ($url, $text, $classes = null) {
 		
 		$classes_string = " class='" . implode(" ", $classes) . "'";
 	}
-	
+		
 	return "<a href='" . $url . "' title='" . $title . "'" . $classes_string . ">" . $text . "</a>";
 }
 

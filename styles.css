@@ -223,16 +223,24 @@ ul.toc {
 
 .nav {
 	text-align: center;
+	font-size: 2em;
+	color: #888 !important;
+	padding-top: .5em !important;
+	padding-bottom: .5em !important;
 }
 
 .nav a, .nav a:visited {
-	font-size: 2em;
 	font-weight: bold;
 	text-decoration: none;
 	color: #888;
-	padding: .5em;
 }
 
 .nav a:hover, .nav a:active {
 	color: #4681d6;
+}
+
+.header {
+	margin-top: 0 !important;
+	background: #555 url(images/header.jpg) no-repeat center center !important;
+	color: #eee !important;
 }

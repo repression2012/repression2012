@@ -12,7 +12,7 @@ $content = array_merge(
 		section(
 			$toc,
 			$header,
-			null,
+			'header',
 			false
 		)
 	),

@@ -11,7 +11,7 @@ $titleSection = array(
 	section(
 		$toc,
 		array_merge($header),
-		null,
+		'header',
 		false
 	)
 );
@@ -19,8 +19,7 @@ $titleSection = array(
 $content = array_merge(
 	$titleSection,
 	$nav,
-	toc($toc, 'standalone'),
-	$nav
+	toc($toc, 'standalone')
 );
 
 $pathInfo = pathinfo(__FILE__);

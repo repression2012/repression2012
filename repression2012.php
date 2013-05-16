@@ -2,19 +2,23 @@
 
 require_once("rapportComplet.php");
 
+$thisPage = 'repression2012';
+require_once("nav.php");
+
 $title = "Répression, Discrimination et Grève Étudiante: Analyse et témoignages";
 
 $titleSection = array(
 	section(
 		$toc,
-		array_merge($header, $coverImage),
-		null,
+		array_merge($header),
+		'header',
 		false
 	)
 );
 
 $content = array_merge(
 	$titleSection,
+	$nav,
 	toc($toc, 'inline'),
 	$introSection,
 	$brutalitePoliciere,

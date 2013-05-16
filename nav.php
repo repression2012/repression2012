@@ -16,19 +16,40 @@ if ($nextPageIndex < count($toc['pages'])) {
 	$nextURL = $toc['pages'][$nextPageIndex] . ".php";
 }
 
-$backButton = ($thisPage === 'index') ? "" : navButton($previousURL, "←");
-$upButton = ($thisPage === 'index') ? navButton("repression2012.php", "Rapport&nbsp;Complet") : navButton("index.php", "Table&nbsp;des&nbsp;matières", "nav_toc");
-$nextButton = ($thisPage === 'index') ? "" : navButton($nextURL, "→");
+$backButton = "";
+$upButton = "";
+$nextButton = "";
+
+switch ($thisPage) {
+	case 'index':
+		$upButton = navButton("repression2012.php", "Rapport&nbsp;Complet", null);
+		break;
+	case 'repression2012':
+		$backButton = navButton("index.php", "←");
+		$upButton = " | ";
+		$nextButton = navButton('#0', "Sauter la table des matières ↓");
+		break;
+	default:
+		$backButton = navButton($previousURL, "←");
+		$upButton = navButton("index.php", "Table&nbsp;des&nbsp;matières", "nav_toc");
+		$nextButton = navButton($nextURL, "→");
+		break;
+}
 
 $nav = array(
 	section(
 		$toc,
 		array(
 			$backButton,
+			" ",
 			$upButton,
+			" ",
 			$nextButton
 		),
-		'nav',
+		array(
+			'nav',
+			'nav_rapportComplet'
+		),
 		false
 	)
 );
