@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Sommaire et exemples de brutalité policière vécue au printemps 2012 au Québec: Types de violence (physique, verbale, psychologique) et d'armes utilisées, techniques et attitudes des policierEs, mécanismes de plaintes";
 
 $keywords = array(
 	"policiers",
@@ -31,8 +31,6 @@ $keywords = array(
 	"balles de plastique",
 	"manifestation",
 	"victoriaville",
-	"force",
-	"coups",
 	"violence",
 	"irritants"
 );

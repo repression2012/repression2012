@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Sommaire et exemples de discrimination vécue au printemps 2012 au Québec basée sur le port d'un symbole politique, le carré rouge.";
 
 $keywords = array(
 	"carré rouge",

@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Introduction du rapport sur la répression et la discrimination vécue au printemps 2012 au Québec: Mise en contexte, objectifs du projet, méthodologie, structure du texte.";
 
 $keywords = array(
 	"témoignages",

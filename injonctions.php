@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Analyse des injonctions émises au printemps 2012 au Québec: Légitimité remise en question, exemple de rérapage, etc.";
 
 $keywords = array(
 	"injonctions",

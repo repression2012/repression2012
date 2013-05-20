@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Bilan des arrestations de masse faites durant le mouvement de grève étudiante au Québec du 16 février au 3 septembre 2012.";
 
 $keywords = array(
 	"arrestations de masse",

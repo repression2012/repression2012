@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Sommaire, exemples et analyse en regard du droit concernant les arrestations faites au printemps 2012 au Québec: Arrestations de masse, individuelles, ciblées, aléatoires, préventives. Comportement des policierEs.";
 
 $keywords = array(
 	"arrestations",

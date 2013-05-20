@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Conclusions du rapport sur la répression et la discrimination vécue au printemps 2012 au Québec: Violations des droits et libertés, incohérence dans la discrétion policière, judiciarisation du politique et politisation du judiciaire.";
 
 $keywords = array(
 	"liberté d'expression",

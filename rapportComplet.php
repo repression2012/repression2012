@@ -1956,7 +1956,7 @@ $loi12 = array(
 							", LQ 2012, c. 12."
 						)
 					),
-					"108 a eu pour effet de mettre fin à l’application des mandats de grève des associations étudiantes. Près de quarante-cinq lois spéciales mettant fin à des grèves et forçant le retour au travail ont été adoptées au Québec, entre 1950 et 2011",
+					" a eu pour effet de mettre fin à l’application des mandats de grève des associations étudiantes. Près de quarante-cinq lois spéciales mettant fin à des grèves et forçant le retour au travail ont été adoptées au Québec, entre 1950 et 2011",
 					renvoi(
 						$notes,
 						array(
@@ -1965,7 +1965,7 @@ $loi12 = array(
 							"», 31 mai 2012. "
 						)
 					),
-					"109. Mais c’est la première fois de l’histoire qu’une loi spéciale s’applique dans le cadre d’une grève étudiante."
+					". Mais c’est la première fois de l’histoire qu’une loi spéciale s’applique dans le cadre d’une grève étudiante."
 				)
 			),
 			paragraph(

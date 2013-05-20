@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Sommaire des différents chefs d'accusation utilisés pour arrêter des gens au printemps 2012 au Québec. Exemples d'accusations, conditions de libérations, etc.";
 
 $keywords = array(
 	"conditions de libération",

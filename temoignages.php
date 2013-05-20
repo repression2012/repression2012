@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Témoignages révélant les perceptions et conséquences des interventions policières du printemps 2012 au Québec: Humiliation, atteinte à la dignité, colère, peur, violation des droits, profilage politique, discrimination, pertes de confiance, etc.";
 
 $keywords = array(
 	"témoignages",

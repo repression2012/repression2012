@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Recommendations faites par la ligue des droits et libertés, l'association des juristes progressistes et l'association pour une solidarité syndicale étudiante suite à l'analyse démontrée dans le présent rapport sur la répression et la discrimination vécue au printemps 2012 au Québec.";
 
 $keywords = array(
 	"droits",

@@ -21,7 +21,7 @@ $content = array_merge(
 	$nav
 );
 
-$description = "";
+$description = "Sommaire et exemples d'interpellations, de fouilles et de détentions faites en vertu de l'article 31 du code criminel. Analyse en regard droit: légalité des fouilles, utilisation abusive de l'article 31, etc.";
 
 $keywords = array(
 	"violation de la paix",

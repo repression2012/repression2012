@@ -17,10 +17,11 @@ $content = array_merge(
 		)
 	),
 	$nav,
-	$loi12
+	$loi12,
+	$nav
 );
 
-$description = "";
+$description = "Analyse légale de la loi spéciale adoptée au printemps 2012 au Québec: Comparaisons avec d'autres loi similaires, critiques, répercussions, mésinformation en ce qui la concerne, etc.";
 
 $keywords = array(
 	"manifestation",
