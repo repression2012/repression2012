@@ -24,7 +24,6 @@ $toc = array(
 
 function implodeIfArray ($contents, $glue = "") {
 	$returnValue = (is_array($contents)) ? implode($glue, $contents) : $contents;
-	$returnValue .= "\n";
 	
 	return $returnValue;
 }
