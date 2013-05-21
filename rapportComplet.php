@@ -2974,7 +2974,7 @@ $bilanArrestations = array(
 				array(
 					"Nombre d’arrestations qui ont mené à des constats: 2433",
 					br(),
-					"Dont 817 constats liées au ",
+					"Dont 817 constats liés au ",
 					em("Code de la sécurité routière"),
 					renvoi(
 						$notes,
@@ -2985,7 +2985,7 @@ $bilanArrestations = array(
 						)
 					),
 					br(),
-					"Dont 1616 constats liées à des règlements municipaux"
+					"Dont 1616 constats liés à des règlements municipaux"
 				)
 			),	
 			paragraph("Autres arrestations ou interpellations avec des conséquences inconnues&nbsp;: 605"),
